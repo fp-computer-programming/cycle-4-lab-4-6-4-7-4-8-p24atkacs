@@ -35,24 +35,32 @@ You can assume all inputs are valid and lowercase
 
 # Author: Andrew Tkacs
 
-# Prompt the user for a 6-letter DNA sequence
+# empty list to store numbers
 
-dna_sequence = input("Enter a 6-letter DNA sequence (a,c,t,g): ")
+numbers = []
 
-# Create a given list
+# Prompt the user for five numbers
 
-DNA_list = {'a': 't', 'c': 'g', 't': 'a', 'g': 'c'}
+for i in range(5):
+    num = input(f"Enter number {i + 1}: ")
+    numbers.append(float(num))
 
-# Initialize an empty string to store the DNA List
+# Create a string with numbers separated by spaces
 
-complementary_sequence = ''
+num_string = ' '.join(map(str, numbers))
 
-# Iterate through the input sequence and find the complementary bases
+# Extract the smallest and largest numbers
 
-for base in dna_sequence:
-    complementary_base = DNA_list[base]
-    complementary_sequence += complementary_base
+smallest = min(numbers)
+largest = max(numbers)
 
-# Print the complementary DNA sequence
+# Calculate the product of the smallest and largest numbers
 
-print("Complementary DNA Sequence:", complementary_sequence)
+product = smallest * largest
+
+# Print the results with labels
+
+print(f"The numbers entered are: {num_string}")
+print(f"The smallest number given was {smallest}")
+print(f"The largest number given was {largest}")
+print(f"The product of the two numbers extracted was {product}")

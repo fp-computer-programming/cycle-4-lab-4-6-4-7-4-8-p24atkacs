@@ -32,27 +32,16 @@ You can assume all inputs are valid and lowercase
 
 
 """
-
 # Author: Andrew Tkacs
 
-# Prompt the user for a 6-letter DNA sequence
+# Get user input for the animal and dish
 
-dna_sequence = input("Enter a 6-letter DNA sequence (a,c,t,g): ")
+animal = input("Enter an animal: ").lower()
+dish = input("Enter a dish: ").lower()
 
-# Create a given list
+# Check if the first letter of the animal matches the first and last letter of the dish
 
-DNA_list = {'a': 't', 'c': 'g', 't': 'a', 'g': 'c'}
-
-# Initialize an empty string to store the DNA List
-
-complementary_sequence = ''
-
-# Iterate through the input sequence and find the complementary bases
-
-for base in dna_sequence:
-    complementary_base = DNA_list[base]
-    complementary_sequence += complementary_base
-
-# Print the complementary DNA sequence
-
-print("Complementary DNA Sequence:", complementary_sequence)
+if animal[0] == dish[0] and animal[0] == dish[-1]:
+    print("True")
+else:
+    print("False")
